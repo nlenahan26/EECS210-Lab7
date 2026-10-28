@@ -1,5 +1,5 @@
 # Name: Nathan Lenahan
-# KUID: 31789
+# KUID: 3178995
 # LAB Session (Day/Time): Wednesday 11AM
 # LAB Assignment: Lab 07
 # Description: The program produces the next permutation in lexicographic order,
@@ -39,11 +39,11 @@ def next_permutation(num):
     n = len(num) - 1 
     j = n -1 
 
-    #While the digit at index j is greater than the last digit, decrement j
+    #Start at last digit and move left until a digit smaller than the next digit is found
     while num[j] > num[j+1]:
         j = j-1
 
-    #Finds the largest index k where the digit at k is greater than the digit at j
+    #Start at last digit and move left until a digit greater than num[j] is found
     k = n 
     while num[j] > num[k]:
         k = k-1 
@@ -67,7 +67,7 @@ def next_permutation(num):
     print()
 
 
-
+#Main
 def main():
     num_list = get_input()
     next_permutation(num_list)
